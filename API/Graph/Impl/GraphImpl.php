@@ -6,7 +6,7 @@ namespace \API\Graph\Impl;
  * Repository class
  * @Singleton
  */
-class Graph implements iGraph
+class GraphImpl implements iGraph
 {
   private $mRoot;
   private $mRepository;

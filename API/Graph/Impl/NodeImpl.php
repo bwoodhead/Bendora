@@ -2,7 +2,7 @@
 
 namespace \API\Graph\Impl;
 
-class Node implements iNode
+class NodeImpl implements iNode
 {
   private $mRepository;
   private $mParentNode;

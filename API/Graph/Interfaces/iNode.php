@@ -1,10 +1,9 @@
 <?php
 
-namespace \API\Graph;
+namespace \API\Graph\Interfaces;
 
 interface iNode 
 {
-
 }
 
 ?>
