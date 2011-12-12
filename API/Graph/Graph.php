@@ -1,5 +1,7 @@
 <?php
 
+namespace API\Graph;
+
 class Graph 
 {
   private $mGraph;
