@@ -2,12 +2,13 @@
 
 class Graph 
 {
-  private mGraph;
+  private $mGraph;
   
-  public function __constructor(\API\Graph\Interfaces\iGraph $graph)
+  public function __constructor(\API\Graph\Interfaces\iGraph &$graph)
   {
     $this->mGraph = $graph;
   }
+  
 }
 
 ?>
