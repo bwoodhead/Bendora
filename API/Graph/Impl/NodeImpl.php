@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Graph\Impl;
+namespace API\Graph\Impl;
 
 class NodeImpl implements iNode
 {

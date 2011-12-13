@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Graph;
+namespace API\Graph;
 
 class Node 
 {

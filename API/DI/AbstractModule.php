@@ -1,6 +1,8 @@
 <?php
 
-namespace \API\DI;
+namespace API\DI;
+
+require_once './API/DI/AbstractModule.php';
 
 abstract class AbstractModule 
 {
@@ -9,7 +11,7 @@ abstract class AbstractModule
   /**
    * Override the configuration to define what gets mapped to what.
    */
-  public function configure();
+  public abstract function configure();
   
   /**
    *

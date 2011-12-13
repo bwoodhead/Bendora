@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Utils\Impl;
+namespace API\Utils\Impl;
 
 /**
  * Local memory caching

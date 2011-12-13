@@ -1,9 +1,10 @@
 <?php
 
+
 /**
  * Test Module is the configuration for the dependency injection
  */
-class TestModule extends AbstractModule
+class TestModule extends \API\DI\AbstractModule
 {
   public function configure() 
   {

@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Repository\Impl;
+namespace API\Repository\Impl;
 
 class SearchImpl implements iSearch
 {

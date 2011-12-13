@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\DI;
+namespace API\DI;
 
 class DependencyInjector
 {
@@ -10,7 +10,7 @@ class DependencyInjector
   /**
    * 
    */
-  private function __constructor() 
+  private function __constructor( \API\DI\AbstractModule $module ) 
   {
     $this->mModule = $module;
   }
@@ -20,10 +20,10 @@ class DependencyInjector
    * @param \API\DI\AbstractModule $module
    * @return DependencyInjector 
    */
-  public static function createInjector( \API\DI\AbstractModule $module )
-  {
-    return new DependencyInjector( $module );
-  }
+  //public static function createInjector(  )
+  //{
+  //  return new DependencyInjector( $module );
+  //}
   
   /**
    * Get a class instance
@@ -36,10 +36,10 @@ class DependencyInjector
     // $numArgs = func_num_args();
     
     // Get the class reflection
-    $class = new ReflectionClass($className);
+    $class = new \ReflectionClass($className);
 
     // Check to see if the class is suppost to be a singleton
-    $singleton = isSingleton($class->getDocComment());
+    $singleton = isSingleton( $class->getDocComment() );
     
     // Is it a singleton 
     if ( $singleton )

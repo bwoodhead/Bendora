@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Utils;
+namespace API\Utils;
 
 class Cache 
 {

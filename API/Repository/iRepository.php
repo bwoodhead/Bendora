@@ -1,6 +1,6 @@
 <?php
 
-namespace \API\Repository;
+namespace API\Repository;
 
 interface iRepository
 {
