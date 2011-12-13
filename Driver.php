@@ -2,10 +2,8 @@
 
 require_once './API/DI/AbstractModule.php';
 require_once './API/DI/DependencyInjector.php';
-
 require_once './API/Graph/Graph.php';
 require_once './API/Graph/Node.php';
-
 require_once './TestModule.php';
 
 // Get the injector and use Test Module for the configuration
@@ -13,13 +11,13 @@ require_once './TestModule.php';
 $injector = new \API\DI\DependencyInjector( new TestModule() );
 
 // Get an instance of the graph class
-$graph = $injector->getInstance("API\Graph\Graph");
+$graph = $injector->getInstance(API\Graph\Graph);
 
 // Get the repositories root object
-$root = $graph->getRootNode();
+//$root = $graph->getRootNode();
 
 // Create a new node 
-$newNode = $injector->getInstance(API\Graph\Node);
+$newNode = $injector->getInstance("API\Graph\Node");
 
 // Add it to the root node
 $root->add($newNode);
