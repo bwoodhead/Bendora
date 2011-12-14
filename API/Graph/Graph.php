@@ -1,12 +1,12 @@
 <?php
 
-namespace API\Graph;
+namespace Graph;
 
 class Graph 
 {
   private $mGraph;
   
-  public function __constructor(\API\Graph\Interfaces\iGraph &$graph)
+  public function __constructor( Graph\Interfaces\iGraph &$graph )
   {
     $this->mGraph = $graph;
   }

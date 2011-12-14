@@ -1,6 +1,6 @@
 <?php
 
-namespace API\Repository\Impl;
+namespace Repository\Impl;
 
 class FedoraImpl implements iRepository
 {

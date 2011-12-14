@@ -1,6 +1,6 @@
 <?php
 
-namespace API\DI;
+namespace DI;
 
 class DependencyInjector
 {
@@ -10,7 +10,7 @@ class DependencyInjector
   /**
    * 
    */
-  private function __constructor( \API\DI\AbstractModule $module ) 
+  private function __constructor( DI\AbstractModule $module ) 
   {
     $this->mModule = $module;
   }

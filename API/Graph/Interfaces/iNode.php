@@ -1,6 +1,6 @@
 <?php
 
-namespace API\Graph\Interfaces;
+namespace Graph\Interfaces;
 
 interface iNode 
 {

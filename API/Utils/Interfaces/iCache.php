@@ -1,6 +1,6 @@
 <?php
 
-namespace API\Utils\Interfaces;
+namespace Utils\Interfaces;
 
 interface iCache 
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace API\Graph\Impl;
+namespace Graph\Impl;
 
 /**
  * Repository class
@@ -17,7 +17,7 @@ class GraphImpl implements iGraph
    * Constructor
    * @Inject
    */
-  public function __constructor(\API\Repository\iRepository &$repo, \API\Repository\iSearch &$search, \API\Utils\iCache &$cache)
+  public function __constructor( Repository\iRepository &$repo, Repository\iSearch &$search, Utils\iCache &$cache)
   {
     $this->mRepository = $repo;
     $this->mSearch = $search;

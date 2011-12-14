@@ -1,16 +1,31 @@
 <?php
 
-namespace API\Graph;
+namespace Graph;
 
 class Node 
 {
   private $mNode;
   
-  public function __contructor(\API\Graph\Interfaces\iNode &$node)
+  public function __contructor( Graph\Interfaces\iNode &$node)
   {
     $this->mNode = $node;
   }
   
+  /**
+   * Commit the changes
+   */
+  public function commit()
+  {
+    
+  }
+  
+  /**
+   * Rollback the changes
+   */
+  public function rollback()
+  {
+    
+  }
 }
 
 ?>

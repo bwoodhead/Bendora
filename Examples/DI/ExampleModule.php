@@ -2,9 +2,9 @@
 
 
 /**
- * Test Module is the configuration for the dependency injection
+ * Example Module is the configuration for the dependency injection
  */
-class TestModule extends \API\DI\AbstractModule
+class ExampleModule extends \API\DI\AbstractModule
 {
   public function configure() 
   {

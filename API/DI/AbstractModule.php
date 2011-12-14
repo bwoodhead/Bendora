@@ -1,8 +1,6 @@
 <?php
 
-namespace API\DI;
-
-require_once './API/DI/AbstractModule.php';
+namespace DI;
 
 abstract class AbstractModule 
 {
