@@ -9,7 +9,6 @@ class Parser
     $this->mParser = $parser;
   }
   
-  public function tranform( $object );
 }
 
 ?>
