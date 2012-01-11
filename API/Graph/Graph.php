@@ -1,7 +1,7 @@
 <?php
 
 namespace Graph;
-
+ 
 class Graph 
 {
   private $mGraph;

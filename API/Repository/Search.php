@@ -8,6 +8,7 @@ class Search
   {
     $this->mSearch = $search;
   }
+  
 }
 
 ?>
