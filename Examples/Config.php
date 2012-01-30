@@ -50,7 +50,7 @@ class FileConfigure extends Configuration2
   public function Load() 
   {
     //fopen($fileName, "r");
-  }
+  } 
 }
 
 /**
