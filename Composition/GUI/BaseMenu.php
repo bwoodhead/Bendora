@@ -2,23 +2,17 @@
 
 class BaseMenu 
 {
-  private $mComponents;
-  
-  public function __constructor()
+  private $mComponents = array();
+    
+  public function addSubMenu($name, $menu)
   {
-    $this->mComponents = array();
+    $this->mComponents[$name] = $menu;
   }
   
-  public function addMenuItem($item)
+  public function getMenuItem($name)
   {
-    $this->mComponents[$item] = $item;
+    return $this->mComponents[$name];
   }
-  
-  public function getMenuItem()
-  {
-    return $item;
-  }
-
 }
 
 ?>

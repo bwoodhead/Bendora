@@ -7,7 +7,7 @@
 class Object 
 {
   private $mMetadata;
-  private $mDatastream;
+  private $mDatastream = array();
   private $nextId = 0;
   
   /**
