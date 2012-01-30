@@ -4,7 +4,22 @@
  * A fedora object
  */
 class Object {
-  //put your code here
+
+  public function Object($pid)
+  {  
+  }
+  
+  public function getImageURL()
+  { 
+  }
+  
+  public function getImageData()
+  {
+  }
+  
+  public function Save()
+  {
+  }
 }
 
 ?>

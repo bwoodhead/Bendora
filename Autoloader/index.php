@@ -11,7 +11,4 @@ spl_autoload_register();
 $test = new Test\ClassTest();
 $test->test();
 
-//phpinfo();
-
-
 ?>
