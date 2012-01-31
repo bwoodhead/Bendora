@@ -8,7 +8,7 @@ class ClassTest {
   {
     echo("it does work");
   }
-  
+   
 }
 
 ?>
