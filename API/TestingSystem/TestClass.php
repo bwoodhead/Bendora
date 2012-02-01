@@ -55,7 +55,7 @@ class TestClass
 
     // Call the function
     return call_user_func("test\\".$this->className."::".$method);
-  }
+}
   
   private function getExampleTest($method)
   {
