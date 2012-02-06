@@ -62,6 +62,11 @@ class EventManager
   }
   
   
+  /**
+   * Tell all the listeners that an event occured.
+   * @param Event $eventType
+   * @return type 
+   */
   public function FireEvent(Event $eventType)
   {
     $listeners = $this->mInstances[$eventType->getClass()];
