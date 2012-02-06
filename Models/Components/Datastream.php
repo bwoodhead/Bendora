@@ -2,6 +2,8 @@
 
 class Datastream
 {
+  private $file;
+  
   
 }
 
