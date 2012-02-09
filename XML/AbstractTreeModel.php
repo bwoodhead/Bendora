@@ -97,6 +97,15 @@ class AbstractTreeModel
   } 
   
   /**
+   * Direct calls to the class will return an array of children.
+   * @return type 
+   */
+  public function __invoke() 
+  {
+    return $this->mChildren;
+  }
+  
+  /**
    * Tree printing stuff
    */
   public function printTree()
@@ -126,9 +135,15 @@ $root->books->book1->_attributes->type = "Soft Cover";
 $root->books->book2->name = "Code Complete";
 $root->books->book2->_attributes->type = "Soft Cover";
 
+// Add a magazine to the list
 $root->magazines->page1->name = "Tech Review";
 $root->magazines->page1->_attributes->type = "Magazine";
 
+// Print the tree
 $root->printTree();
+
+echo("<pre>");
+// Get all the books 
+var_dump( $root->books );
 
 ?>
