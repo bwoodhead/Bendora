@@ -7,6 +7,11 @@ class AbstractAttributes
 {
   private $mData = array(); 
   
+  /**
+   * Magic Get returns the value using the method name as a key.
+   * @param type $name
+   * @return type 
+   */
   public function __get($name) 
   {  
     if ( !array_key_exists($name, $this->mData) ) 
@@ -15,12 +20,21 @@ class AbstractAttributes
     } 
     return $this->mData[$name];
   }
-  
+
+  /**
+   * Magic Set stores the value using the method name as a key.
+   * @param type $name
+   * @param type $value 
+   */
   public function __set($name, $value) 
   {
     $this->mData[$name] = $value;
   } 
   
+  /**
+   * Tree printing helper
+   * @return string 
+   */
   public function printAttributes()
   {
     $string = null;
@@ -41,6 +55,11 @@ class AbstractTreeModel
   private $mAttributes;
   private $mChildren;
   
+  /**
+   * Default constructor that requires a node name
+   * @param type $name
+   * @param type $value 
+   */
   public function __construct($name, $value=null) 
   {
     $this->mName = $name;
@@ -49,6 +68,11 @@ class AbstractTreeModel
     $this->mChildren = array();
   }
 
+  /**
+   * Magic Get Method that return abstract tree models or attributes based on the method name
+   * @param type $name
+   * @return type 
+   */
   public function __get($name) 
   { 
     if ( $name == "_attributes") {
@@ -62,32 +86,19 @@ class AbstractTreeModel
     return $this->mChildren[$name];
   }
   
+  /**
+   * Magic Set Method that stores a value based on the method name
+   * @param type $name
+   * @param type $value 
+   */
   public function __set($name, $value) 
   {
     $this->mValue = $value;
   } 
   
-  public function _setValue($value)
-  {
-    $this->mValue = $value;
-  }
-
-  public function _addAttribute($key, $value)
-  {
-    $this->mAttributes->$key = $value;
-  }
-  
-  public function _attribute()
-  {
-    echo("attribute");
-    return $this->mAttributes;
-  }
-
-  public function _addChild(AbstractTreeModel &$child)
-  {
-    array_push( $this->mChildren, $child );
-  }
-  
+  /**
+   * Tree printing stuff
+   */
   public function printTree()
   {
     echo("<table border=1>");
@@ -104,49 +115,20 @@ class AbstractTreeModel
   }
 }
 
-//header("Content-type: text/plain");
-
+// Create a tree
 $root = new AbstractTreeModel("Root");
-$root->_setValue("asdfasdf");
 
+// Build a path with a book
 $root->books->book1->name = "Test Book1";
 $root->books->book1->_attributes->type = "Soft Cover";
 
-$root->books->book2->name = "Test Book2";
+// Build a path with another book
+$root->books->book2->name = "Code Complete";
 $root->books->book2->_attributes->type = "Soft Cover";
 
-$root->books->book3->name = "Test Book3";
-$root->books->book3->_attributes->type = "Soft Cover";
-
-/*
-$root->_addAttribute("name", "TestTest");
-
-$page1 = new AbstractTreeModel("page1", "asdf1");
-$page2 = new AbstractTreeModel("page2", "asdf2");
-
-$page1->_addAttribute("asdf", "att1");
-$page1->_addAttribute("asdf", "att2");
-
-$root->_addChild( $page1 );
-$root->_addChild( $page2 );
-
-$child1 = new AbstractTreeModel("child1", "value1");
-$child2 = new AbstractTreeModel("child2", "value2");
-
-$page1->_addChild($child1);
-$page2->_addChild($child2);
-
-//$root->name = "asdf";
-//$root->name = "asdf";
-//$root->attribute->adsf = 'asdf';
-
-*/
+$root->magazines->page1->name = "Tech Review";
+$root->magazines->page1->_attributes->type = "Magazine";
 
 $root->printTree();
-
-//echo('<pre>');
-//var_dump( $root );
-
-//print_r( $root );
 
 ?>
