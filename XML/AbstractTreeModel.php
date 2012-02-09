@@ -9,10 +9,10 @@ class AbstractAttributes
   
   public function __get($name) 
   {  
-    if ( ! array_key_exists($name, $this->mData)) {
+    if ( !array_key_exists($name, $this->mData) ) 
+    {
       return null;
-    }
-    
+    } 
     return $this->mData[$name];
   }
   
@@ -54,7 +54,8 @@ class AbstractTreeModel
     if ( $name == "_attributes") {
       return $this->mAttributes;
     }
-    if ( ! array_key_exists($name, $this->mChildren($name)) )
+    
+    if ( ! array_key_exists($name, $this->mChildren))
     {
       $this->mChildren[$name] = new AbstractTreeModel($name);
     }
@@ -74,6 +75,12 @@ class AbstractTreeModel
   public function _addAttribute($key, $value)
   {
     $this->mAttributes->$key = $value;
+  }
+  
+  public function _attribute()
+  {
+    echo("attribute");
+    return $this->mAttributes;
   }
 
   public function _addChild(AbstractTreeModel &$child)
@@ -100,6 +107,7 @@ class AbstractTreeModel
 //header("Content-type: text/plain");
 
 $root = new AbstractTreeModel("Root");
+$root->_setValue("asdfasdf");
 
 $root->books->book1->name = "Test Book1";
 $root->books->book1->_attributes->type = "Soft Cover";
