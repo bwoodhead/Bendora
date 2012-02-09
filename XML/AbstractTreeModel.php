@@ -1,12 +1,15 @@
 <?php
 
+/**
+ * AbstractAttributes helps with setting attributes using magic methods.
+ */
 class AbstractAttributes
 {
   private $mData = array(); 
   
   public function __get($name) 
   {  
-    if ( ! isset($this->mData[$name])) {
+    if ( ! array_key_exists($name, $this->mData)) {
       return null;
     }
     
@@ -45,7 +48,24 @@ class AbstractTreeModel
     $this->mAttributes = new AbstractAttributes();
     $this->mChildren = array();
   }
-    
+
+  public function __get($name) 
+  { 
+    if ( $name == "_attributes") {
+      return $this->mAttributes;
+    }
+    if ( ! array_key_exists($name, $this->mChildren($name)) )
+    {
+      $this->mChildren[$name] = new AbstractTreeModel($name);
+    }
+    return $this->mChildren[$name];
+  }
+  
+  public function __set($name, $value) 
+  {
+    $this->mValue = $value;
+  } 
+  
   public function _setValue($value)
   {
     $this->mValue = $value;
@@ -75,20 +95,22 @@ class AbstractTreeModel
     }
     echo("</table>");
   }
-  
-  public function __get($name) {
-    ;
-  }
-  
-  public function __set($name, $value) 
-  {
-    echo( $name . ' . ' . $value );
-  }
 }
 
 //header("Content-type: text/plain");
 
 $root = new AbstractTreeModel("Root");
+
+$root->books->book1->name = "Test Book1";
+$root->books->book1->_attributes->type = "Soft Cover";
+
+$root->books->book2->name = "Test Book2";
+$root->books->book2->_attributes->type = "Soft Cover";
+
+$root->books->book3->name = "Test Book3";
+$root->books->book3->_attributes->type = "Soft Cover";
+
+/*
 $root->_addAttribute("name", "TestTest");
 
 $page1 = new AbstractTreeModel("page1", "asdf1");
@@ -110,12 +132,13 @@ $page2->_addChild($child2);
 //$root->name = "asdf";
 //$root->attribute->adsf = 'asdf';
 
+*/
+
 $root->printTree();
 
 //echo('<pre>');
 //var_dump( $root );
 
 //print_r( $root );
-
 
 ?>
